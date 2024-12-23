@@ -16,8 +16,22 @@ export default function Contact() {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = (data: ContactFormData) => {
+  const onSubmit = async (data: ContactFormData) => {
     console.log(data);
+    
+    // Send data to the webhook
+    try {
+      await fetch('https://hook.us2.make.com/ihkrumncyrob5zfmnt1veb3trb5if0qz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+    } catch (error) {
+      console.error('Error sending data to the webhook:', error);
+    }
+
     reset();
     alert('Thank you for your message. We will contact you soon!');
   };
