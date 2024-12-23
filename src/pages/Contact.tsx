@@ -172,6 +172,20 @@ export default function Contact() {
                   <p>Sunday: Closed</p>
                 </div>
               </div>
+              {/* Google Maps Iframe Container */}
+              <div className="mt-8 h-64 bg-neutral-100 rounded-lg">
+                <iframe
+                  title="D&D Design Center Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.8476373170565!2d-73.95043268459374!3d40.58885977934824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c245061f9e6ec3%3A0xe4c124faca084db2!2s2615%20E%2017th%20St%2C%20Brooklyn%2C%20NY%2011235!"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-lg"
+                ></iframe>
+              </div>
             </motion.div>
           </div>
         </div>
